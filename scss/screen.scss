@@ -1,0 +1,113 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+
+$v-unit: 24px;
+
+%standard-pad {
+  padding: $v-unit $v-unit 1px;
+}
+
+%page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  background: #EFEFEF;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: $v-unit*1.75;
+  margin-top: 0;
+}
+
+.book {
+  margin: $v-unit;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  background: white;
+  @include box-shadow(2px 2px 5px transparentize(black, 0.8));
+  &:hover {
+    .book-cover:after {
+      border-width: 600px;
+      border-bottom-width: 3000px;
+      border-right-width: 0;
+    }
+    .book-first-page {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+}
+
+  .book-cover {
+    @extend %page;
+    @extend %standard-pad;
+    background: #1682F1;
+    color: white;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: 0 solid transparent;
+      border-bottom-color: white;
+      border-right-color: white;
+      border-width: 10px;
+      @include transition(border-width 0.2s);
+    }
+  }
+  
+  .book-first-page {
+    @extend %page;
+    background: white;
+    opacity: 0;
+    @include transition(opacity 0.2s);
+    transition-delay: 0.2s;
+  }
+  
+    .book-image {
+      background: url(http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_n6es0tRk5w1st5lhmo1_1280.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 140px;
+    }
+  
+    .book-intro {
+      @extend %standard-pad;
+    }
+    
+      .read-more {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: $v-unit/2 $v-unit;
+        background: #FD5F4E;
+        text-align: right;
+        color: white;  
+      }

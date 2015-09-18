@@ -1,0 +1,121 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 10, ../scss/screen.scss */
+.book-cover, .book-intro {
+  padding: 24px 24px 1px;
+}
+
+/* line 14, ../scss/screen.scss */
+.book-cover, .book-first-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* line 23, ../scss/screen.scss */
+body {
+  font-family: sans-serif;
+  background: #EFEFEF;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+/* line 30, ../scss/screen.scss */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 36, ../scss/screen.scss */
+p {
+  margin: 0;
+}
+
+/* line 40, ../scss/screen.scss */
+h2 {
+  font-size: 32px;
+  line-height: 42px;
+  margin-top: 0;
+}
+
+/* line 46, ../scss/screen.scss */
+.book {
+  margin: 24px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  background: white;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* line 54, ../scss/screen.scss */
+.book:hover .book-cover:after {
+  border-width: 600px;
+  border-bottom-width: 3000px;
+  border-right-width: 0;
+}
+/* line 59, ../scss/screen.scss */
+.book:hover .book-first-page {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* line 66, ../scss/screen.scss */
+.book-cover {
+  background: #1682F1;
+  color: white;
+  z-index: 1;
+}
+/* line 72, ../scss/screen.scss */
+.book-cover:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 0 solid transparent;
+  border-bottom-color: white;
+  border-right-color: white;
+  border-width: 10px;
+  -webkit-transition: border-width 0.2s;
+  -moz-transition: border-width 0.2s;
+  -o-transition: border-width 0.2s;
+  transition: border-width 0.2s;
+}
+
+/* line 85, ../scss/screen.scss */
+.book-first-page {
+  background: white;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  transition-delay: 0.2s;
+}
+
+/* line 93, ../scss/screen.scss */
+.book-image {
+  background: url(http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_n6es0tRk5w1st5lhmo1_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 140px;
+}
+
+/* line 104, ../scss/screen.scss */
+.read-more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 12px 24px;
+  background: #FD5F4E;
+  text-align: right;
+  color: white;
+}
